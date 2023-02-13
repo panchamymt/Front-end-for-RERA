@@ -1,86 +1,94 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Form</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <title>Details Required</title>
 </head>
 <body>
-  <form action="results.html" method="post">
-    <div>
-      <label>Name</label>
-      <input type="text" name="name" required>
-    </div>
-    <div>
-      <label>Guardian</label>
-      <input type="text" name="guardian" required>
-    </div>
-    <div>
-      <label>Relationship with Guardian</label>
-      <select name="relationship" required>
-        <option value="">Select</option>
-        <option value="Son">Son</option>
-        <option value="Daughter">Daughter</option>
-      </select>
-    </div>
-    <div>
-      <label>Age</label>
-      <input type="number" name="age" required>
-    </div>
-    <div>
-      <label>Aadhar</label>
-      <input type="number" name="aadhar" required>
-    </div>
-    <div>
-      <label>Pan</label>
-      <input type="number" name="pan" required>
-    </div>
-    <div>
-  	<label>Address</label>
-  	<textarea id="address" name="address" rows="5" required></textarea>
-    </div>
-    <div>
-      <label>Apartment No</label>
-      <input type="number" name="apartment" required>
-    </div>
-    <div>
-      <label>Built up area</label>
-      <input type="number" name="built" required>
-    </div>
-    <div>
-      <label>Total area</label>
-      <input type="number" name="total" required>
-    </div>
-	<div>
-		<label>Road way</label>
-		<input type="number" name="road" required>
-	</div>
-	<div>
-		<label>Address of building</label>
-		<input type="text" name="address_of_building" required>
-	</div>
-	<div>
-		<label>Name of project</label>
-		<input type="text" name="name_of_project" required>
-	</div>
-	<div>
-		<label>Name of architect firm</label>
-		<input type="text" name="name_of_firm" required>
-	</div>
-	<div>
-		<label>Name of architect</label>
-		<input type="text" name="name_of_architect" required>
-	</div>
-	<div>
-		<label>LSGD Municipality</label>
-		<input type="text" name="lsgd" required>
-	</div>
-	<div>
-		<button>Submit</button>
-	</div>
-	</form>
-</body>
+    <form action="results.html" method="post">
+        <div class="text-center">
+            <h2 class="fs-1" class="fw-bold" class="text-decoration-underline">Details</h2>
+        </div>
+        <div class="row justify-content-center-my-5">
+            <div class="col-lg-6">
+                <div>
+                    <label for="name" class="fw-bold" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="e.g. John">
+                  </div>
+                  <div>
+                    <label for="gaurdian" class="fw-bold" class="form-label">Gaurdian:</label>
+                    <input type="text" class="form-control" id="gaurdian" placeholder="e.g. John">
+                  </div>
+                  <div>
+                    <label for="relationship_with_gaurdian" class="fw-bold" class="form-label">Relationship with gaurdian</label>
+                    <select class="form-select" id="relationship_with_gaurdian">
+                      <option value="Son" selected>Son</option>
+                      <option value="Daughter" selected>Daughter</option>
+                      <option value="Others" selected>Others</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="age" class="fw-bold" class="form-label">Age:</label>
+                    <input type="number" class="form-control" id="age" aria-describedby="age" placeholder="e.g. 25">
+                  </div>
+                  <div>
+                    <label for="aadhar" class="fw-bold" class="form-label">Aadhar:</label>
+                    <input type="number" class="form-control" id="aadhar" placeholder="e.g. 1563783762786">
+                  </div>
+                  <div>
+                    <label for="pan" class="form-label">Pan:</label>
+                    <input type="number" class="form-control" id="pan" placeholder="e.g. 586887878846">
+                  </div>
+                  <div>
+                    <label for="address" class="fw-bold" class="form-label">Address</label>
+                    <textarea id="address" class="form-control" name="address" style="height: 140px" required></textarea>
+                  </div>
+                  <div>
+                    <label for="apartment_no" class="fw-bold" class="form-label">Apartment No:</label>
+                    <input type="number" class="form-control" id="apartment_no" placeholder="e.g. 6579">
+                  </div>
+                  <div>
+                    <label for="built_up" class="fw-bold" class="form-label">Bulit up area:</label>
+                    <input type="number" class="form-control" id="built_up" placeholder="e.g. 1563">
+                  </div>
+                  <div>
+                    <label for="total_area" class="fw-bold" class="form-label">Total area:</label>
+                    <input type="number" class="form-control" id="total_area" placeholder="e.g. 15637">
+                  </div>
+                  <div>
+                    <label for="road_way" class="fw-bold" class="form-label">Road way:</label>
+                    <input type="number" class="form-control" id="road_way" placeholder="e.g. 1563">
+                  </div>
+                  <div>
+                    <label for="address_of_building" class="fw-bold" class="form-label">Address of building</label>
+                    <textarea id="address_of_building" class="form-control" name="address_of_building" style="height: 140px" required></textarea>
+                  </div>
+                  <div>
+                    <label for="name_of_project" class="fw-bold" class="form-label">Name of project:</label>
+                    <input type="text" class="form-control" id="name_of_project" placeholder="e.g. Rivervalley">
+                  </div>
+                  <div>
+                    <label for="name_of_architect_firm" class="fw-bold" class="form-label">Name of architect firm:</label>
+                    <input type="text" class="form-control" id="name_of_architect_firm" placeholder="e.g. ABC">
+                  </div>
+                  <div>
+                    <label for="name_of_architect" class="fw-bold" class="form-label">Name of architect:</label>
+                    <input type="text" class="form-control" id="name_of_architect" placeholder="e.g. John">
+                  </div>
+                  <div>
+                    <label for="lsgd_municipality" class="fw-bold" class="form-label">LSGD Municipality:</label>
+                    <input type="text" class="form-control" id="lsgd_municipality" placeholder="e.g. Kattappana">
+                  </div>
+                  <div class="mb-4 text-center">
+                      <button type="submit" class="btn btn-secondary">Submit</button>
+                  </div>
+
+            </div>
+        </div>
+     </form>
+    </body>
 </html>
 			

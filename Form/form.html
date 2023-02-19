@@ -14,6 +14,14 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <style>
+      #add-row-btn {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
     <title>RERA Registration Form</title>
   </head>
 
@@ -38,6 +46,7 @@
                   class="form-control"
                   id="name"
                   placeholder="e.g. John"
+                  required
                 />
               </div>
               <div>
@@ -49,6 +58,7 @@
                   class="form-control"
                   id="gaurdian"
                   placeholder="e.g. John"
+                  required
                 />
               </div>
               <div>
@@ -72,6 +82,7 @@
                   id="age"
                   aria-describedby="age"
                   placeholder="e.g. 25"
+                  required
                 />
               </div>
               <div>
@@ -83,6 +94,7 @@
                   class="form-control"
                   id="aadhar"
                   placeholder="e.g. 1563783762786"
+                  required
                 />
               </div>
               <div>
@@ -92,6 +104,7 @@
                   class="form-control"
                   id="pan"
                   placeholder="e.g. 586887878846"
+                  required
                 />
               </div>
               <div>
@@ -115,6 +128,7 @@
                   class="form-control"
                   id="apartment_no"
                   placeholder="e.g. 6579"
+                  required
                 />
               </div>
               <div>
@@ -126,6 +140,7 @@
                   class="form-control"
                   id="built_up"
                   placeholder="e.g. 1563"
+                  required
                 />
               </div>
               <div>
@@ -137,6 +152,7 @@
                   class="form-control"
                   id="total_area"
                   placeholder="e.g. 15637"
+                  required
                 />
               </div>
               <div>
@@ -148,6 +164,7 @@
                   class="form-control"
                   id="road_way"
                   placeholder="e.g. 1563"
+                  required
                 />
               </div>
               <div>
@@ -166,6 +183,20 @@
                 ></textarea>
               </div>
               <div>
+                <label
+                  for="resurvey_no"
+                  class="fw-bold"
+                  class="form-label"
+                  >Resurvey No</label>
+                  <input
+                    typr="number"
+                    class="form-control"
+                    id="resurvey_no"
+                    placeholder="e.g.43"
+                    required
+                  />
+              </div>
+              <div>
                 <label for="name_of_project" class="fw-bold" class="form-label"
                   >Name of project:</label
                 >
@@ -174,6 +205,7 @@
                   class="form-control"
                   id="name_of_project"
                   placeholder="e.g. Rivervalley"
+                  required
                 />
               </div>
               <div>
@@ -188,6 +220,7 @@
                   class="form-control"
                   id="name_of_architect_firm"
                   placeholder="e.g. ABC"
+                  required
                 />
               </div>
               <div>
@@ -202,6 +235,7 @@
                   class="form-control"
                   id="name_of_architect"
                   placeholder="e.g. John"
+                  required
                 />
               </div>
               <div>
@@ -216,11 +250,134 @@
                   class="form-control"
                   id="lsgd_municipality"
                   placeholder="e.g. Kattappana"
+                  required
                 />
               </div>
+              <div>
+                <label 
+                for="num-floors"
+                class="fw-bold"
+                class="form-label"
+                >Number of Floors:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="num-floors" 
+                name="num-floors">
+              </div>
+              <table class="table">
+                <h5><u>Total Area</u></h5>
+                <thread>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Floor name</th>
+                    <th scope="col">Plinth Area(sq.m.)</th>
+                    <th scope="col">FAR Area(sq.m.)</th>
+                    <th scope="col">Carpet Area(sq.m.)</th>
+                  </tr>
+                </thread>
+                <tbody id="floor-rows">
+                
+                </tbody>
+              </table>
+              <div class="form-group">
+                <span class="btn btn-primary" id="add-row-btn" style="font-size: 30px; cursor: pointer;">Add Floor</span>
+              </div>
+              <script>
+                const floorRows = document.getElementById('floor-rows');
+const addRowBtn = document.getElementById('add-row-btn');
+
+addRowBtn.addEventListener('click', () => {
+  const numRows = floorRows.getElementsByTagName('tr').length;
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <th scope="row">${numRows + 1}</th>
+    <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+    <td><input type="number" class="form-control"></td>
+    <td><input type="number" class="form-control"></td>
+    <td><input type="number" class="form-control"></td>
+  `;
+  floorRows.appendChild(row);
+});
+              </script>
+              <div>
+                <label 
+                for="total_plinth_area"
+                class="fw-bold"
+                class="form-label"
+                >Total plinth area:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="total_plinth_area" 
+                />
+              </div>
+              <div>
+                <label 
+                for="total_far_area"
+                class="fw-bold"
+                class="form-label"
+                >Total FAR area:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="total_far_area" 
+                />
+              </div>
+              <div>
+                <label 
+                for="total_carpet_area"
+                class="fw-bold"
+                class="form-label"
+                >Total carpet area:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="total_carpet_area" 
+                />
+              </div>
+              <div>
+                <label
+                  for="number_of_storeys"
+                  class="fw-bold"
+                  class="form-label"
+                  >Number of storeys:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="number_of_storeys"
+                  placeholder="e.g. Basement+Ground+No.of Floors+Terrace"
+                  required
+                />
+              </div>
+              <table class="table">
+                <h5><u>Number of Apartments</u></h5>
+                <thread>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Floor</th>
+                    <th scope="col">No of Apartments</th>
+                  </tr>
+                </thread>
+                <tbody>
+                  <tr>
+                    <th scope="row"><td><input type="text" class="form-control"></td></th>
+                    <td><input type="text" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><td><input type="text" class="form-control"></td></th>
+                    <td><input type="text" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><td><input type="text" class="form-control"></td></th>
+                    <td><input type="text" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><td><input type="text" class="form-control"></td></th>
+                    <td><input type="text" class="form-control"></td>
+                  </tr>
               <br />
-              <div class="mb-3 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
           </div>

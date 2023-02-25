@@ -22,6 +22,40 @@
       }
 
     </style>
+    <style>
+      #add-row-btn2 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <style>
+      #add-row-btn3 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <style>
+      #add-row-btn4 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #exampleTextarea {
+        height: auto;
+        min-height: 100px;
+        max-height: 500px;
+        resize: vertical;
+      }
+    </style>
+  
     <title>RERA Registration Form</title>
   </head>
 
@@ -353,31 +387,389 @@ addRowBtn.addEventListener('click', () => {
               </div>
               <table class="table">
                 <h5><u>Number of Apartments</u></h5>
-                <thread>
+                <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Floor</th>
                     <th scope="col">No of Apartments</th>
                   </tr>
-                </thread>
-                <tbody>
-                  <tr>
-                    <th scope="row"><td><input type="text" class="form-control"></td></th>
-                    <td><input type="text" class="form-control"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><td><input type="text" class="form-control"></td></th>
-                    <td><input type="text" class="form-control"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><td><input type="text" class="form-control"></td></th>
-                    <td><input type="text" class="form-control"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><td><input type="text" class="form-control"></td></th>
-                    <td><input type="text" class="form-control"></td>
-                  </tr>
-              <br />
+                </thead>
+                <tbody id="no_of_apartments">
+                </tbody>
+              </table>
+              <div class="form-group">
+                <span class="btn btn-primary" id="add-row-btn2" style="font-size: 20px; cursor: pointer;" type="button">Add Floor</span>
+              </div>
+              <script>
+                window.onload = () => {
+                  const floorRows = document.getElementById('no_of_apartments');
+                  const addRowBtn2 = document.getElementById('add-row-btn2');
+              
+                  addRowBtn2.addEventListener('click', () => {
+                    const numRows = floorRows.querySelectorAll('tbody tr').length;
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                      <th scope="row">${numRows + 1}</th>
+                      <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+                      <td><input type="number" class="form-control"></td>
+                    `;
+                    floorRows.appendChild(row);
+                  });
+              
+                  const recreationRows = document.getElementById('recreation_areas');
+                  const addRowBtn3 = document.getElementById('add-row-btn3');
+              
+                  addRowBtn3.addEventListener('click', () => {
+                    const numRows = recreationRows.querySelectorAll('tbody tr').length;
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                      <th scope="row">${numRows + 1}</th>
+                      <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                      <td><input type="number" class="form-control"></td>
+                    `;
+                    recreationRows.appendChild(row);
+                  });
+                };
+              </script>
+              <div>
+                <label
+                  for="height_of_building"
+                  class="fw-bold"
+                  class="form-label"
+                  >Height of the building:</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="height_of_building"
+                  placeholder="e.g. 4125 m"
+                  required
+                />
+                <div>
+                  <h5><u>Area and description of common area and facility</u></h5>
+                  <label
+                    for="lawn_parks"
+                    class="fw-bold"
+                    class="form-label"
+                    >Lawn,Parks,etc.:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lawn_parks"
+                    placeholder="e.g. private road"
+                    required
+                  />
+                  <div>
+                    <label
+                      for="road_pathways"
+                      class="fw-bold"
+                      class="form-label"
+                      >Road pathways:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="road_pathways"
+                      required
+                    />
+                  <div>
+                    <label
+                      for="other_common_areas"
+                      class="fw-bold"
+                      class="form-label"
+                      >Other common areas:</label
+                      >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="other_common_areas"
+                      placeholder="Staircase,Passages etc."
+                      required
+                    />
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Recreation Areas</th>
+                          <th scope="col">Total Foor Area(Sq.m)</th>
+                        </tr>
+                      </thead>
+                      <tbody id="recreation_areas">
+                      </tbody>
+                    </table>
+                    <div class="form-group">
+                      <span class="btn btn-primary" id="add-row-btn3" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
+                    </div>
+                    <script>
+                      window.onload = () => {
+                        const floorRows = document.getElementById('no_of_apartments');
+                        const addRowBtn2 = document.getElementById('add-row-btn2');
+                    
+                        addRowBtn2.addEventListener('click', () => {
+                          const numRows = floorRows.querySelectorAll('tbody tr').length;
+                          const row = document.createElement('tr');
+                          row.innerHTML = `
+                            <th scope="row">${numRows + 1}</th>
+                            <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+                            <td><input type="number" class="form-control"></td>
+                          `;
+                          floorRows.appendChild(row);
+                        });
+                    
+                        const recreationRows = document.getElementById('recreation_areas');
+                        const addRowBtn3 = document.getElementById('add-row-btn3');
+                    
+                        addRowBtn3.addEventListener('click', () => {
+                          const numRows = recreationRows.querySelectorAll('tbody tr').length;
+                          const row = document.createElement('tr');
+                          row.innerHTML = `
+                            <th scope="row">${numRows + 1}</th>
+                            <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                            <td><input type="number" class="form-control"></td>
+                          `;
+                          recreationRows.appendChild(row);
+                        });
+                      };
+                    </script>
+                    <div>
+                      <label
+                        for="total_car_parking"
+                        class="fw-bold"
+                        class="form-label"
+                        >Total No of Car Parking:</label
+                        >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="total_car_parking"
+                        placeholder="e.g. 45"
+                        required
+                      />
+                      <div>
+                        <label
+                          for="total_two_wheeler_parking"
+                          class="fw-bold"
+                          class="form-label"
+                          >Total No of two Wheeler Parking:</label
+                          >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="total_two_wheeler_parking"
+                          placeholder="e.g. 15"
+                          required
+                        />
+                        <div>
+                          <label
+                            for="water_supply"
+                            class="fw-bold"
+                            class="form-label"
+                            >Water Supply Arrangements:</label
+                            >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="water_supply"
+                            placeholder="Bore Well,Water Tank etc."
+                            required
+                          />
+                          <div>
+                            <label
+                              for="street_light"
+                              class="fw-bold"
+                              class="form-label"
+                              >Street Light Within The property:</label
+                              >
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              No
+                            </label>
+                          </div>
+                          
+                          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                          <script>
+                          $(document).ready(function() {
+                            $('#flexCheckDefault').change(function() {
+                              if($(this).is(":checked")) {
+                                $('#flexCheckChecked').prop('disabled', true);
+                              } else {
+                                $('#flexCheckChecked').prop('disabled', false);
+                              }
+                            });
+                            
+                            $('#flexCheckChecked').change(function() {
+                              if($(this).is(":checked")) {
+                                $('#flexCheckDefault').prop('disabled', true);
+                              } else {
+                                $('#flexCheckDefault').prop('disabled', false);
+                              }
+                            });
+                          });
+                          </script>
+                          <div>
+                            <label
+                              for="internal_drainage"
+                              class="fw-bold"
+                              class="form-label"
+                              >Internal Drainage:</label
+                              >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="internal_drainage"
+                              required
+                            />
+                          <div>
+                            <label
+                              for="other_facilities"
+                              class="fw-bold"
+                              class="form-label"
+                              >Other Common Facilities:</label
+                              >
+                              <textarea class="form-control" id="other_facilities" rows="1" style="height: 140px"></textarea>
+                            <script>
+                              $(document).ready(function() {
+  $('#exampleTextarea').on('input', function() {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  });
+});
+                            </script>
+                          <div>
+                            <label
+                              for="description_of_limited_area"
+                              class="fw-bold"
+                              class="form-label"
+                              >Description of the limited area and facilities if any stating to which apartment their use to be reserved:</label
+                              >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="description_of_limited_area"
+                              required
+                            />
+                          <div>
+                            <label
+                              for="value_of_property"
+                              class="fw-bold"
+                              class="form-label"
+                              >Value of the property</label
+                              >
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="value_of_property"
+                                required
+                              />
+                          <div>
+                            <label
+                              for="nature_of_interest_of_owner"
+                              class="fw-bold"
+                              class="form-label"
+                              >Nature of interest of the owner/owners in the property:</label
+                              >
+                              <textarea class="form-control" id="nature_of_interest_of_owner" rows="1" style="height: 140px"></textarea>
+                              <script>
+                                $(document).ready(function() {
+      $('#exampleTextarea').on('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+      });
+    });
+                              </script>
+                          <div>
+                            <label
+                              for="existing_encumbrances"
+                              class="fw-bold"
+                              class="form-label"
+                              >Existing encumbrance, if any affecting the property:</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="existing_encumbrances"
+                                required
+                              />
+                          <div>
+                            <table class="table">
+                              <h5><u>Description of each apartment of each building-Apartment</u></h5>
+                              <thead>
+                                <tr>
+                                  <th scope="col">Sl No</th>
+                                  <th scope="col">Client name</th>
+                                  <th scope="col">Falt No</th>
+                                  <th scope="col">Location
+                                  <th scope="col">Number of rooms</th>
+                                  <th scope="col">Super Built up Area of Apartment(Sq Feet)</th>
+                                  <th scope="col">Value of Apartment</th>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id="description_of_apartments">
+                              </tbody>
+                            </table>
+                            <div class="form-group">
+                              <span class="btn btn-primary" id="add-row-btn4" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
+                            </div>
+                            <script>
+                              window.onload = () => {
+                                const floorRows = document.getElementById('no_of_apartments');
+                                const addRowBtn2 = document.getElementById('add-row-btn2');
+                            
+                                addRowBtn2.addEventListener('click', () => {
+                                  const numRows = floorRows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  floorRows.appendChild(row);
+                                });
+                            
+                                const recreationRows = document.getElementById('recreation_areas');
+                                const addRowBtn3 = document.getElementById('add-row-btn3');
+                            
+                                addRowBtn3.addEventListener('click', () => {
+                                  const numRows = recreationRows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  recreationRows.appendChild(row);
+                                });
+
+                                const descriptionRows = document.getElementById('description_of_apartments');
+                                const addRowBtn4 = document.getElementById('add-row-btn4');
+                            
+                                addRowBtn4.addEventListener('click', () => {
+                                  const numRows = descriptionRows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  descriptionRows.appendChild(row);
+                                });
+                              };
+                            </script>
+                      
+              </br>
               </div>
             </div>
           </div>

@@ -46,12 +46,23 @@
       }
 
     </style>
+    <style>
+      #add-row-btn5 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    #description td{
+      padding: 15px;
+    }
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
       #exampleTextarea {
         height: auto;
         min-height: 100px;
-        max-height: 500px;
+        max-height: 1000px;
         resize: vertical;
       }
     </style>
@@ -699,25 +710,21 @@ addRowBtn.addEventListener('click', () => {
                                 required
                               />
                           <div>
-                            <table class="table">
-                              <h5><u>Description of each apartment of each building-Apartment</u></h5>
+                            <table class="table" id="description_of_limited_area">
+                              <h5><u>Description of the limited common ares and facilities, in respect of the building</u></h5>
+                              <h6>a) Foundation and main wall of the building/buildings</h6>
                               <thead>
                                 <tr>
-                                  <th scope="col">Sl No</th>
-                                  <th scope="col">Client name</th>
-                                  <th scope="col">Falt No</th>
-                                  <th scope="col">Location
-                                  <th scope="col">Number of rooms</th>
-                                  <th scope="col">Super Built up Area of Apartment(Sq Feet)</th>
-                                  <th scope="col">Value of Apartment</th>
+                                  <th scope="col">#</th>
+                                  <th scope="col">#</th>
                                   </th>
                                 </tr>
                               </thead>
-                              <tbody id="description_of_apartments">
+                              <tbody id="description_of_limited_common_area">
                               </tbody>
                             </table>
                             <div class="form-group">
-                              <span class="btn btn-primary" id="add-row-btn4" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
+                              <span class="btn btn-primary" id="add-row-btn5" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
                             </div>
                             <script>
                               window.onload = () => {
@@ -747,6 +754,223 @@ addRowBtn.addEventListener('click', () => {
                                     <td><input type="number" class="form-control"></td>
                                   `;
                                   recreationRows.appendChild(row);
+                                });
+
+                                const samplerows = document.getElementById('description_of_limited_common_areas');
+                                const addRowBtn5 = document.getElementById('add-row-btn5');
+                            
+                                addRowBtn5.addEventListener('click', () => {
+                                  const numRows = samplerows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  samplerows.appendChild(row);
+                                });
+
+                                const descriptionRows = document.getElementById('description_of_apartments');
+                                const addRowBtn4 = document.getElementById('add-row-btn4');
+                            
+                                addRowBtn4.addEventListener('click', () => {
+                                  const numRows = descriptionRows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  descriptionRows.appendChild(row);
+                                });
+                              };
+                            </script>
+                          </div>
+                          <div>
+                            <h5>b) Stairway</h5>
+                            <h6>Main stair</h6>
+                            <label
+                              for="rise"
+                              class="fw-bold"
+                              class="form-label"
+                              >Rise:</label
+                              >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="rise"
+                              required
+                            />
+                            <div>
+                              <label
+                                for="tread"
+                                class="fw-bold"
+                                class="form-label"
+                                >Tread:</label
+                                >
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tread"
+                                required
+                              />
+                            <div>
+                              <label
+                                for="width"
+                                class="fw-bold"
+                                class="form-label"
+                                >Width:</label
+                                >
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="width"
+                                  required
+                                />
+                                  <div>
+                                    <label
+                                      for="handrail"
+                                      class="fw-bold"
+                                      class="form-label"
+                                      >Handrail HTS:</label
+                                      >
+                                      <input
+                                        type="number"
+                                        class="form-control"
+                                        id="handrail"
+                                        required
+                                        />
+                                <div>
+                                  <label
+                                    for="water_tank"
+                                    class="fw-bold"
+                                    class="form-label"
+                                    >c) Water Tank:</label
+                                    >
+                                    <textarea class="form-control" id="water_tank" rows="1" style="height: 140px"></textarea>
+                                    <script>
+                                      $(document).ready(function() {
+                    $('#exampleTextarea').on('input', function() {
+                      this.style.height = 'auto';
+                      this.style.height = (this.scrollHeight) + 'px';
+                    });
+                  });
+                                    </script>
+                              <div>
+                                <label
+                                  for="plumbing_network"
+                                  class="fw-bold"
+                                  class="form-label"
+                                  >d) Plumbing Network:</label
+                                  >
+                                  <textarea class="form-control" id="plumbing_network" rows="1" style="height: 140px"></textarea>
+                                  <script>
+                                    $(document).ready(function() {
+                                    $('#exampleTextarea').on('input', function() {
+                                    this.style.height = 'auto';
+                                    this.style.height = (this.scrollHeight) + 'px';
+                                    });
+                                  });
+                                  </script>
+                              <div>
+                                <label
+                                  for="electrical_wiring_network"
+                                  class="fw-bold"
+                                  class="form-label"
+                                  >e) Electrical Wiring Network:</label
+                                  >
+                                  <textarea class="form-control" id="electrical_wiring_network" rows="1" style="height: 140px"></textarea>
+                                  <script>
+                                    $(document).ready(function() {
+                                    $('#exampleTextarea').on('input', function() {
+                                    this.style.height = 'auto';
+                                    this.style.height = (this.scrollHeight) + 'px';
+                                    });
+                                  });
+                                  </script>
+                              <div>
+                                <label
+                                  for="other_common_areas"
+                                  class="fw-bold"
+                                  class="form-label"
+                                  >f) Other Common Areas:</label
+                                  >
+                                  <textarea class="form-control" id="other_common_areas" rows="1" style="height: 140px"></textarea>
+                                  <script>
+                                    $(document).ready(function() {
+                                    $('#exampleTextarea').on('input', function() {
+                                    this.style.height = 'auto';
+                                    this.style.height = (this.scrollHeight) + 'px';
+                                    });
+                                  });
+                                  </script>                            
+                            <div>
+                            <table class="table" id="description">
+                              <h5><u>Description of each apartment of each building-Apartment</u></h5>
+                              <thead>
+                                <tr>
+                                  <th scope="col">Sl No</th>
+                                  <th scope="col">Client name</th>
+                                  <th scope="col">Falt No</th>
+                                  <th scope="col">Location
+                                  <th scope="col">Number of rooms</th>
+                                  <th scope="col">Super Built up Area of Apartment(Sq Feet)</th>
+                                  <th scope="col">Value of Apartment</th>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id="description_of_apartments">
+                              </tbody>
+                            </table>
+                            <div class="form-group">
+                              <span class="btn btn-primary" id="add-row-btn4" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
+                            </div>
+                            <script>
+                               window.onload = () => {
+                                const floorRows = document.getElementById('no_of_apartments');
+                                const addRowBtn2 = document.getElementById('add-row-btn2');
+                            
+                                addRowBtn2.addEventListener('click', () => {
+                                  const numRows = floorRows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  floorRows.appendChild(row);
+                                });
+                            
+                                const recreationRows = document.getElementById('recreation_areas');
+                                const addRowBtn3 = document.getElementById('add-row-btn3');
+                            
+                                addRowBtn3.addEventListener('click', () => {
+                                  const numRows = recreationRows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  recreationRows.appendChild(row);
+                                });
+
+                                const samplerows = document.getElementById('description_of_limited_common_areas');
+                                const addRowBtn5 = document.getElementById('add-row-btn5');
+                            
+                                addRowBtn5.addEventListener('click', () => {
+                                  const numRows = samplerows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  samplerows.appendChild(row);
                                 });
 
                                 const descriptionRows = document.getElementById('description_of_apartments');

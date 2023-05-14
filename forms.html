@@ -1,0 +1,945 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #add-row-btn {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <style>
+      #add-row-btn2 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <style>
+      #add-row-btn3 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <style>
+      #add-row-btn6 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <style>
+      #add-row-btn8 {
+      font-size: 12px !important;
+      padding: 5px 10px !important;
+      cursor: pointer;
+      }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #exampleTextarea {
+        height: auto;
+        min-height: 100px;
+        max-height: 1000px;
+        resize: vertical;
+      }
+    </style>
+  
+    <title>RERA Registration Form</title>
+  </head>
+
+  <body>
+    <div class="text-center">
+      <h3 class="fs-1" class="fw-bold" class="text-decoration-underline">
+        Registration Details
+      </h3>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+       <div class="col-md-8">
+        <form action="results.html" method="post">
+          <div class="row justify-content-center-my-5">
+            <div class="col-lg-6">
+              <div>
+                <label for="name" class="fw-bold" class="form-label"
+                  >Name:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="e.g. John"
+                  required
+                />
+              </div>
+              <div>
+                <label for="gaurdian" class="fw-bold" class="form-label"
+                  >Gaurdian:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gaurdian"
+                  placeholder="e.g. John"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="relationship_with_gaurdian"
+                  class="fw-bold"
+                  class="form-label"
+                  >Relationship with gaurdian</label
+                >
+                <select class="form-select" id="relationship_with_gaurdian">
+                  <option value="Son" selected>Son</option>
+                  <option value="Daughter" selected>Daughter</option>
+                  <option value="Others" selected>Others</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="age" class="fw-bold" class="form-label">Age:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="age"
+                  aria-describedby="age"
+                  placeholder="e.g. 25"
+                  required
+                />
+              </div>
+              <div>
+                <label for="aadhar" class="fw-bold" class="form-label"
+                  >Aadhar:</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="aadhar"
+                  placeholder="e.g. 1563783762786"
+                  required
+                />
+              </div>
+              <div>
+                <label for="pan" class="form-label">Pan:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="pan"
+                  placeholder="e.g. 586887878846"
+                  required
+                />
+              </div>
+              <div>
+                <label for="address" class="fw-bold" class="form-label"
+                  >Address</label
+                >
+                <textarea
+                  id="address"
+                  class="form-control"
+                  name="address"
+                  style="height: 140px"
+                  required
+                ></textarea>
+              </div>
+              <div>
+                <label for="apartment_no" class="fw-bold" class="form-label"
+                  >Apartment No:</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="apartment_no"
+                  placeholder="e.g. 6579"
+                  required
+                />
+              </div>
+              <div>
+                <label for="built_up" class="fw-bold" class="form-label"
+                  >Bulit up area:</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="built_up"
+                  placeholder="e.g. 1563"
+                  required
+                />
+              </div>
+              <div>
+                <label for="total_area" class="fw-bold" class="form-label"
+                  >Total area:</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="total_area"
+                  placeholder="e.g. 15637"
+                  required
+                />
+              </div>
+              <div>
+                <label for="road_way" class="fw-bold" class="form-label"
+                  >Road way:</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="road_way"
+                  placeholder="e.g. 1563"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="address_of_building"
+                  class="fw-bold"
+                  class="form-label"
+                  >Address of building</label
+                >
+                <textarea
+                  id="address_of_building"
+                  class="form-control"
+                  name="address_of_building"
+                  style="height: 140px"
+                  required
+                ></textarea>
+              </div>
+              <div>
+                <label
+                  for="resurvey_no"
+                  class="fw-bold"
+                  class="form-label"
+                  >Resurvey No</label>
+                  <input
+                    typr="number"
+                    class="form-control"
+                    id="resurvey_no"
+                    placeholder="e.g.43"
+                    required
+                  />
+              </div>
+              <div>
+                <label for="name_of_project" class="fw-bold" class="form-label"
+                  >Name of project:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name_of_project"
+                  placeholder="e.g. Rivervalley"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="name_of_architect_firm"
+                  class="fw-bold"
+                  class="form-label"
+                  >Name of architect firm:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name_of_architect_firm"
+                  placeholder="e.g. ABC"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="name_of_architect"
+                  class="fw-bold"
+                  class="form-label"
+                  >Name of architect:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name_of_architect"
+                  placeholder="e.g. John"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="lsgd_municipality"
+                  class="fw-bold"
+                  class="form-label"
+                  >LSGD Municipality:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lsgd_municipality"
+                  placeholder="e.g. Kattappana"
+                  required
+                />
+              </div>
+              <div>
+                <label 
+                for="num-floors"
+                class="fw-bold"
+                class="form-label"
+                >Number of Floors:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="num-floors" 
+                name="num-floors">
+              </div>
+              <table class="table">
+                <h5><u>Total Area</u></h5>
+                <thread>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Floor name</th>
+                    <th scope="col">Plinth Area(sq.m.)</th>
+                    <th scope="col">FAR Area(sq.m.)</th>
+                    <th scope="col">Carpet Area(sq.m.)</th>
+                  </tr>
+                </thread>
+                <tbody id="floor-rows">
+                
+                </tbody>
+              </table>
+              <div class="form-group">
+                <span class="btn btn-primary" id="add-row-btn" style="font-size: 30px; cursor: pointer;">Add Floor</span>
+              </div>
+              <script>
+                const floorRows = document.getElementById('floor-rows');
+const addRowBtn = document.getElementById('add-row-btn');
+
+addRowBtn.addEventListener('click', () => {
+  const numRows = floorRows.getElementsByTagName('tr').length;
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <th scope="row">${numRows + 1}</th>
+    <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+    <td><input type="number" class="form-control"></td>
+    <td><input type="number" class="form-control"></td>
+    <td><input type="number" class="form-control"></td>
+  `;
+  floorRows.appendChild(row);
+});
+              </script>
+              <div>
+                <label 
+                for="total_plinth_area"
+                class="fw-bold"
+                class="form-label"
+                >Total plinth area:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="total_plinth_area" 
+                />
+              </div>
+              <div>
+                <label 
+                for="total_far_area"
+                class="fw-bold"
+                class="form-label"
+                >Total FAR area:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="total_far_area" 
+                />
+              </div>
+              <div>
+                <label 
+                for="total_carpet_area"
+                class="fw-bold"
+                class="form-label"
+                >Total carpet area:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="total_carpet_area" 
+                />
+              </div>
+              <div>
+                <label
+                  for="number_of_storeys"
+                  class="fw-bold"
+                  class="form-label"
+                  >Number of storeys:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="number_of_storeys"
+                  placeholder="e.g. Basement+Ground+No.of Floors+Terrace"
+                  required
+                />
+              </div>
+              <table class="table">
+                <h5><u>Number of Apartments</u></h5>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Floor</th>
+                    <th scope="col">No of Apartments</th>
+                  </tr>
+                </thead>
+                <tbody id="no_of_apartments">
+                </tbody>
+              </table>
+              <div class="form-group">
+                <span class="btn btn-primary" id="add-row-btn2" style="font-size: 20px; cursor: pointer;" type="button">Add Floor</span>
+              </div>
+              <script>
+                window.onload = () => {
+                  const floorRows = document.getElementById('no_of_apartments');
+                  const addRowBtn2 = document.getElementById('add-row-btn2');
+              
+                  addRowBtn2.addEventListener('click', () => {
+                    const numRows = floorRows.querySelectorAll('tbody tr').length;
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                      <th scope="row">${numRows + 1}</th>
+                      <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+                      <td><input type="number" class="form-control"></td>
+                    `;
+                    floorRows.appendChild(row);
+                  });
+              
+                  const recreationRows = document.getElementById('recreation_areas');
+                  const addRowBtn3 = document.getElementById('add-row-btn3');
+              
+                  addRowBtn3.addEventListener('click', () => {
+                    const numRows = recreationRows.querySelectorAll('tbody tr').length;
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                      <th scope="row">${numRows + 1}</th>
+                      <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                      <td><input type="number" class="form-control"></td>
+                    `;
+                    recreationRows.appendChild(row);
+                  });
+                };
+              </script>
+              <div>
+                <label
+                  for="height_of_building"
+                  class="fw-bold"
+                  class="form-label"
+                  >Height of the building:</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="height_of_building"
+                  placeholder="e.g. 4125 m"
+                  required
+                />
+                <div>
+                  <h5><u>Area and description of common area and facility</u></h5>
+                  <label
+                    for="lawn_parks"
+                    class="fw-bold"
+                    class="form-label"
+                    >Lawn,Parks,etc.:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lawn_parks"
+                    placeholder="e.g. private road"
+                    required
+                  />
+                  <div>
+                    <label
+                      for="road_pathways"
+                      class="fw-bold"
+                      class="form-label"
+                      >Road pathways:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="road_pathways"
+                      required
+                    />
+                  <div>
+                    <label
+                      for="other_common_areas"
+                      class="fw-bold"
+                      class="form-label"
+                      >Other common areas:</label
+                      >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="other_common_areas"
+                      placeholder="Staircase,Passages etc."
+                      required
+                    />
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Recreation Areas</th>
+                          <th scope="col">Total Foor Area(Sq.m)</th>
+                        </tr>
+                      </thead>
+                      <tbody id="recreation_areas">
+                      </tbody>
+                    </table>
+                    <div class="form-group">
+                      <span class="btn btn-primary" id="add-row-btn3" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
+                    </div>
+                    <script>
+                      window.onload = () => {
+                        const floorRows = document.getElementById('no_of_apartments');
+                        const addRowBtn2 = document.getElementById('add-row-btn2');
+                    
+                        addRowBtn2.addEventListener('click', () => {
+                          const numRows = floorRows.querySelectorAll('tbody tr').length;
+                          const row = document.createElement('tr');
+                          row.innerHTML = `
+                            <th scope="row">${numRows + 1}</th>
+                            <td><input type="text" class="form-control" placeholder="Floor ${numRows + 1}"></td>
+                            <td><input type="number" class="form-control"></td>
+                          `;
+                          floorRows.appendChild(row);
+                        });
+                    
+                        const recreationRows = document.getElementById('recreation_areas');
+                        const addRowBtn3 = document.getElementById('add-row-btn3');
+                    
+                        addRowBtn3.addEventListener('click', () => {
+                          const numRows = recreationRows.querySelectorAll('tbody tr').length;
+                          const row = document.createElement('tr');
+                          row.innerHTML = `
+                            <th scope="row">${numRows + 1}</th>
+                            <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                            <td><input type="number" class="form-control"></td>
+                          `;
+                          recreationRows.appendChild(row);
+                        });
+                        const samplerows = document.getElementById('description_of_limited_common_areas');
+                                const addRowBtn5 = document.getElementById('add-row-btn5');
+                            
+                                addRowBtn5.addEventListener('click', () => {
+                                  const numRows = samplerows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  samplerows.appendChild(row);
+                                });
+
+                                const descriptionRows = document.getElementById('description_of_apartments');
+                                const addRowBtn4 = document.getElementById('add-row-btn4');
+                            
+                                addRowBtn4.addEventListener('click', () => {
+                                  const numRows = descriptionRows.querySelectorAll('tbody tr').length;
+                                  const row = document.createElement('tr');
+                                  row.innerHTML = `
+                                    <th scope="row">${numRows + 1}</th>
+                                    <td><input type="text" class="form-control" placeholder="Recreation Area ${numRows + 1}"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="number" class="form-control"></td>
+                                  `;
+                                  descriptionRows.appendChild(row);
+                                });
+                      };
+                    </script>
+                    <div>
+                      <label
+                        for="total_car_parking"
+                        class="fw-bold"
+                        class="form-label"
+                        >Total No of Car Parking:</label
+                        >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="total_car_parking"
+                        placeholder="e.g. 45"
+                        required
+                      />
+                      <div>
+                        <label
+                          for="total_two_wheeler_parking"
+                          class="fw-bold"
+                          class="form-label"
+                          >Total No of two Wheeler Parking:</label
+                          >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="total_two_wheeler_parking"
+                          placeholder="e.g. 15"
+                          required
+                        />
+                        <div>
+                          <label
+                            for="water_supply"
+                            class="fw-bold"
+                            class="form-label"
+                            >Water Supply Arrangements:</label
+                            >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="water_supply"
+                            placeholder="Bore Well,Water Tank etc."
+                            required
+                          />
+                          <div>
+                            <label
+                              for="street_light"
+                              class="fw-bold"
+                              class="form-label"
+                              >Street Light Within The property:</label
+                              >
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              No
+                            </label>
+                          </div>
+                          
+                          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                          <script>
+                          $(document).ready(function() {
+                            $('#flexCheckDefault').change(function() {
+                              if($(this).is(":checked")) {
+                                $('#flexCheckChecked').prop('disabled', true);
+                              } else {
+                                $('#flexCheckChecked').prop('disabled', false);
+                              }
+                            });
+                            
+                            $('#flexCheckChecked').change(function() {
+                              if($(this).is(":checked")) {
+                                $('#flexCheckDefault').prop('disabled', true);
+                              } else {
+                                $('#flexCheckDefault').prop('disabled', false);
+                              }
+                            });
+                          });
+                          </script>
+                          <div>
+                            <label
+                              for="internal_drainage"
+                              class="fw-bold"
+                              class="form-label"
+                              >Internal Drainage:</label
+                              >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="internal_drainage"
+                              required
+                            />
+                          <div>
+                            <label
+                              for="other_facilities"
+                              class="fw-bold"
+                              class="form-label"
+                              >Other Common Facilities:</label
+                              >
+                              <textarea class="form-control" id="other_facilities" rows="1" style="height: 140px"></textarea>
+                            <script>
+                              $(document).ready(function() {
+  $('#exampleTextarea').on('input', function() {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  });
+});
+                            </script>
+                          <div>
+                            <label
+                              for="description_of_limited_area"
+                              class="fw-bold"
+                              class="form-label"
+                              >Description of the limited area and facilities if any stating to which apartment their use to be reserved:</label
+                              >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="description_of_limited_area"
+                              required
+                            />
+                          <div>
+                            <label
+                              for="value_of_property"
+                              class="fw-bold"
+                              class="form-label"
+                              >Value of the property</label
+                              >
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="value_of_property"
+                                required
+                              />
+                          <div>
+                            <label
+                              for="nature_of_interest_of_owner"
+                              class="fw-bold"
+                              class="form-label"
+                              >Nature of interest of the owner/owners in the property:</label
+                              >
+                              <textarea class="form-control" id="nature_of_interest_of_owner" rows="1" style="height: 140px"></textarea>
+                              <script>
+                                $(document).ready(function() {
+      $('#exampleTextarea').on('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+      });
+    });
+                              </script>
+                          <div>
+                            <label
+                              for="existing_encumbrances"
+                              class="fw-bold"
+                              class="form-label"
+                              >Existing encumbrance, if any affecting the property:</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="existing_encumbrances"
+                                required
+                              />
+                          <div>
+                            <table class="table" id="description_of_limited_area">
+                              <h5><u>Description of the limited common ares and facilities, in respect of the building</u></h5>
+                              <h6>a) Foundation and main wall of the building/buildings</h6>
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">#</th>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id="description_of_limited_common_area">
+                              </tbody>
+                            </table>
+                            <div class="form-group">
+                              <span class="btn btn-primary" id="add-row-btn6" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
+                            </div>
+                            <script>
+                              const areaRows = document.getElementById('description_of_limited_common_area');
+                              const addRowBtn6 = document.getElementById('add-row-btn6');
+                            
+                              addRowBtn6.addEventListener('click', () => {
+                                const numRows = areaRows.getElementsByTagName('tr').length;
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                  <td>${numRows + 1}</td>
+                                  <td><input type="text" class="form-control" placeholder="Enter description"></td>
+                                  <td><input type="text" class="form-control" placeholder="Enter area"></td>
+                                `;
+                                areaRows.appendChild(row);
+                              });
+                            </script>
+                            
+                          </div>
+                          <div>
+                            <h5>b) Stairway</h5>
+                            <h6>Main stair</h6>
+                            <label
+                              for="rise"
+                              class="fw-bold"
+                              class="form-label"
+                              >Rise:</label
+                              >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="rise"
+                              required
+                            />
+                            <div>
+                              <label
+                                for="tread"
+                                class="fw-bold"
+                                class="form-label"
+                                >Tread:</label
+                                >
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tread"
+                                required
+                              />
+                            <div>
+                              <label
+                                for="width"
+                                class="fw-bold"
+                                class="form-label"
+                                >Width:</label
+                                >
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="width"
+                                  required
+                                />
+                                  <div>
+                                    <label
+                                      for="handrail"
+                                      class="fw-bold"
+                                      class="form-label"
+                                      >Handrail HTS:</label
+                                      >
+                                      <input
+                                        type="number"
+                                        class="form-control"
+                                        id="handrail"
+                                        required
+                                        />
+                                <div>
+                                  <label
+                                    for="water_tank"
+                                    class="fw-bold"
+                                    class="form-label"
+                                    >c) Water Tank:</label
+                                    >
+                                    <textarea class="form-control" id="water_tank" rows="1" style="height: 140px"></textarea>
+                                    <script>
+                                      $(document).ready(function() {
+                    $('#exampleTextarea').on('input', function() {
+                      this.style.height = 'auto';
+                      this.style.height = (this.scrollHeight) + 'px';
+                    });
+                  });
+                                    </script>
+                              <div>
+                                <label
+                                  for="plumbing_network"
+                                  class="fw-bold"
+                                  class="form-label"
+                                  >d) Plumbing Network:</label
+                                  >
+                                  <textarea class="form-control" id="plumbing_network" rows="1" style="height: 140px"></textarea>
+                                  <script>
+                                    $(document).ready(function() {
+                                    $('#exampleTextarea').on('input', function() {
+                                    this.style.height = 'auto';
+                                    this.style.height = (this.scrollHeight) + 'px';
+                                    });
+                                  });
+                                  </script>
+                              <div>
+                                <label
+                                  for="electrical_wiring_network"
+                                  class="fw-bold"
+                                  class="form-label"
+                                  >e) Electrical Wiring Network:</label
+                                  >
+                                  <textarea class="form-control" id="electrical_wiring_network" rows="1" style="height: 140px"></textarea>
+                                  <script>
+                                    $(document).ready(function() {
+                                    $('#exampleTextarea').on('input', function() {
+                                    this.style.height = 'auto';
+                                    this.style.height = (this.scrollHeight) + 'px';
+                                    });
+                                  });
+                                  </script>
+                              <div>
+                                <label
+                                  for="other_common_areas"
+                                  class="fw-bold"
+                                  class="form-label"
+                                  >f) Other Common Areas:</label
+                                  >
+                                  <textarea class="form-control" id="other_common_areas" rows="1" style="height: 140px"></textarea>
+                                  <script>
+                                    $(document).ready(function() {
+                                    $('#exampleTextarea').on('input', function() {
+                                    this.style.height = 'auto';
+                                    this.style.height = (this.scrollHeight) + 'px';
+                                    });
+                                  });
+                                  </script>                            
+                            <div>
+                            <table class="table" id="description">
+                              <h5><u>Description of each apartment of each building-Apartment</u></h5>
+                              <thead>
+                                <tr>
+                                  <th scope="col">Sl No</th>
+                                  <th scope="col">Client name</th>
+                                  <th scope="col">Falt No</th>
+                                  <th scope="col">Location
+                                  <th scope="col">Number of rooms</th>
+                                  <th scope="col">Super Built up Area of Apartment(Sq Feet)</th>
+                                  <th scope="col">Value of Apartment</th>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id="description_of_apartments">
+                              </tbody>
+                            </table>
+                            <div class="form-group">
+                              <span class="btn btn-primary" id="add-row-btn8" style="font-size: 20px; cursor: pointer;" type="button">Add Row</span>
+                            </div>
+                            <script>
+                              const descriptionRows = document.getElementById('description_of_apartments');
+                              const addRowBtn8 = document.getElementById('add-row-btn8');
+                              
+                              addRowBtn8.addEventListener('click', () => {
+                                const numRows = descriptionRows.getElementsByTagName('tr').length;
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                  <th scope="row">${numRows + 1}</th>
+                                  <td><input type="text" class="form-control" placeholder="Client name"></td>
+                                  <td><input type="text" class="form-control" placeholder="Flat No"></td>
+                                  <td><input type="text" class="form-control" placeholder="Location"></td>
+                                  <td><input type="number" class="form-control"></td>
+                                  <td><input type="number" class="form-control"></td>
+                                  <td><input type="number" class="form-control"></td>
+                                `;
+                                descriptionRows.appendChild(row);
+                              });
+                              </script>
+                              
+                               
+                      
+              </br>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </body>
+</html>
